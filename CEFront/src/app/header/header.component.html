@@ -1,0 +1,14 @@
+<mat-toolbar>
+    <button mat-icon-button color="accent" routerLink="/home">
+        <mat-icon>home</mat-icon>
+    </button>
+    <span class="titulo">CADASTRO DE EMPRESAS</span>
+    <span class="header-spacer"></span>
+    <button mat-icon-button color="accent" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">        
+        <button mat-menu-item routerLink="/cadastrarEmpresa">Cadastrar Empresas</button>
+        <button mat-menu-item routerLink="/listarEmpresas">Empresas Cadastradas</button>
+    </mat-menu>    
+</mat-toolbar>

@@ -1,0 +1,38 @@
+<mat-card>
+    <form class="example-form">
+        <mat-form-field appearance="fill">
+            <mat-label>CNPJ</mat-label>
+            <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Razão Social</mat-label>
+            <input matInput>
+        </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Nome Fantasia</mat-label>
+            <input matInput>
+          </mat-form-field>
+        
+      
+        
+          
+        
+      
+        
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Ex. San Francisco">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>State</mat-label>
+            <input matInput placeholder="Ex. California">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Postal Code</mat-label>
+            <input matInput #postalCode maxlength="30" placeholder="Ex. 94105">
+            <mat-hint align="end">{{postalCode.value.length}} / 30</mat-hint>
+        </mat-form-field>
+        
+      </form>
+      
+</mat-card>
