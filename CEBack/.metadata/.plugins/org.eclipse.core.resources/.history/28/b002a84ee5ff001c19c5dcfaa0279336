@@ -1,0 +1,5 @@
+package com.alvaroitu.ce.configuration;
+
+public class TestConfig {
+
+}

@@ -1,0 +1,24 @@
+package com.alvaroitu.ce.services;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.alvaroitu.ce.model.Cadem;
+import com.alvaroitu.ce.repositories.CademRepository;
+
+@Service
+public class DBService {
+
+	@Autowired
+	private CademRepository cademRepository;
+
+	public void instanciaBandoDados() {
+		Cadem ceee = new Cadem(null, "22333222", "aquele daquilo", "aquele bar", "barzinho", "222-222", "bar@gamal.com",
+				"A.2.34");
+
+		cademRepository.saveAll(Arrays.asList(ceee));
+	}
+
+}
