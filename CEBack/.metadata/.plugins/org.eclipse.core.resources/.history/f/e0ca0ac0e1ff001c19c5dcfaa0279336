@@ -1,0 +1,5 @@
+package com.alvaroitu.ce.services.exceptions;
+
+public class ObjectNotFoundException {
+
+}

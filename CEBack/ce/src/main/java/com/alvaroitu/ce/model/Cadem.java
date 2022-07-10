@@ -17,19 +17,30 @@ public class Cadem implements Serializable {
 	private Integer id;
 	private String cnpj;
 	private String razaoSocial;
+	private String nomeFantasia;
+	private String apelido;
+	private String telefone;
+	private String email;
+	private String cnae;
 
 	public Cadem() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Cadem(Integer id, String cnpj, String razaoSocial) {
+	
+	public Cadem(Integer id, String cnpj, String razaoSocial, String nomeFantasia, String apelido, String telefone,
+			String email, String cnae) {
 		super();
 		this.id = id;
 		this.cnpj = cnpj;
 		this.razaoSocial = razaoSocial;
+		this.nomeFantasia = nomeFantasia;
+		this.apelido = apelido;
+		this.telefone = telefone;
+		this.email = email;
+		this.cnae = cnae;
 	}
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -52,6 +63,46 @@ public class Cadem implements Serializable {
 
 	public void setRazaoSocial(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
+	}
+
+	public String getNomeFantasia() {
+		return nomeFantasia;
+	}
+
+	public void setNomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
+	}
+
+	public String getApelido() {
+		return apelido;
+	}
+
+	public void setApelido(String apelido) {
+		this.apelido = apelido;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCnae() {
+		return cnae;
+	}
+
+	public void setCnae(String cnae) {
+		this.cnae = cnae;
 	}
 
 	public static long getSerialversionuid() {

@@ -13,8 +13,8 @@ import com.alvaroitu.ce.repositories.CademRepository;
 
 @EntityScan(basePackages = "com.alvaroitu.ce.model")
 @SpringBootApplication
-public class CeApplication implements CommandLineRunner{
-	
+public class CeApplication implements CommandLineRunner {
+
 	@Autowired
 	private CademRepository cademRepository;
 
@@ -25,12 +25,12 @@ public class CeApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		
-		Cadem ceee = new Cadem(null, "22333222", "aquele daquilo");
-		
+
+		Cadem ceee = new Cadem(null, "22333222", "aquele daquilo", "aquele bar", "barzinho", "222-222", "bar@gamal.com",
+				"A.2.34");
+
 		cademRepository.saveAll(Arrays.asList(ceee));
-		
-		
+
 	}
 
 }
