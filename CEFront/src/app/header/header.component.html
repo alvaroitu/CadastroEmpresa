@@ -1,10 +1,11 @@
 <mat-toolbar>
-    <button mat-icon-button color="accent" routerLink="/home">
+    <button mat-icon-button color="primary" routerLink="/home">
         <mat-icon>home</mat-icon>
     </button>
-    <span class="titulo">CADASTRO DE EMPRESAS</span>
+    <span class="text">CADASTRO DE EMPRESAS</span>
     <span class="header-spacer"></span>
-    <button mat-icon-button color="accent" [matMenuTriggerFor]="menu">
+    <span class="text">Menu</span>
+    <button mat-icon-button color="primary" [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">        

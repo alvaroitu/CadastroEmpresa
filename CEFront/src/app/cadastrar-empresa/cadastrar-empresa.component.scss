@@ -1,4 +1,38 @@
-mat-card{
-    margin: 3%;
+.container{
+    margin-top: 100px;    
+
+    &_card{
+        padding: 25px;
+        
+        &_form{
+            display: flex;
+            flex-direction: column;
+
+            &_div{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                &_input{
+                    width: 45%;
+                }
+
+                &_select{
+                    width: 20%;
+                }
+
+                &_button{
+                    width: 45%;
+                    
+                }
+            }
+        }
+    }
+    
+    
+ 
+    
+    
+
 }
 

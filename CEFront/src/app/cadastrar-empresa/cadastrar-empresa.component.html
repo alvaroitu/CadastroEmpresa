@@ -1,38 +1,75 @@
-<mat-card>
-    <form class="example-form">
-        <mat-form-field appearance="fill">
-            <mat-label>CNPJ</mat-label>
-            <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Razão Social</mat-label>
-            <input matInput>
-        </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Nome Fantasia</mat-label>
-            <input matInput>
-          </mat-form-field>
-        
-      
-        
-          
-        
-      
-        
-        <mat-form-field appearance="fill">
-            <mat-label>City</mat-label>
-            <input matInput placeholder="Ex. San Francisco">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>State</mat-label>
-            <input matInput placeholder="Ex. California">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>Postal Code</mat-label>
-            <input matInput #postalCode maxlength="30" placeholder="Ex. 94105">
-            <mat-hint align="end">{{postalCode.value.length}} / 30</mat-hint>
-        </mat-form-field>
-        
-      </form>
-      
-</mat-card>
+<div class="container">    
+    <mat-card class="container_card">
+        <form class="container_card_form" [formGroup]="formulario" (ngSubmit)="cadastrar()">
+            <div class="container_card_form_div">
+                <mat-form-field class="container_card_form_div_input" appearance="fill">
+                    <mat-label>CNPJ</mat-label>
+                    <input matInput formControlName="cnpj" placeholder="Ex. xx.xxx.xxx/xxxx-xx">
+                </mat-form-field>
+                <mat-form-field class="container_card_form_div_input" appearance="fill">
+                    <mat-label>Razão Social</mat-label>
+                    <input matInput formControlName="razaoSocial">
+                </mat-form-field>
+            </div>
+            <div class="container_card_form_div">                
+                <mat-form-field class="container_card_form_div_input" appearance="fill">
+                    <mat-label>Nome Fantasia</mat-label>
+                    <input matInput formControlName="nomeFantasia">
+                </mat-form-field>
+                <mat-form-field class="container_card_form_div_input" appearance="fill">
+                    <mat-label>Apelido</mat-label>
+                    <input matInput formControlName="apelido" #apelido maxlength="30">
+                    <mat-hint>{{apelido.value.length}} / 30</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="container_card_form_div">                
+                <mat-form-field class="container_card_form_div_input" appearance="fill">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput formControlName="telefone" placeholder="Ex. ddd + numero">
+                </mat-form-field>
+                <mat-form-field class="container_card_form_div_input" appearance="fill">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput formControlName="email" placeholder="Ex. joaodasilva@dominio.com">
+                </mat-form-field>
+            </div>
+            <div class="container_card_form_div">
+                <mat-form-field class="container_card_form_div_select" appearance="fill">
+                    <mat-label>Favorite food</mat-label>
+                    <mat-select formControlName="cnaeSecao">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="container_card_form_div_select" appearance="fill">
+                    <mat-label>Favorite food</mat-label>
+                    <mat-select formControlName="cnaeClasse">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="container_card_form_div_select" appearance="fill">
+                    <mat-label>Favorite food</mat-label>
+                    <mat-select>
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="container_card_form_div_select" appearance="fill">
+                    <mat-label>Favorite food</mat-label>
+                    <mat-select>
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                    </mat-option>
+                    </mat-select>
+                </mat-form-field>              
+            </div>
+            <div class="container_card_form_div">
+                <button mat-raised-button class="container_card_form_div_button" color="primary">Enviar</button>
+                <button mat-raised-button class="container_card_form_div_button" color="warn">Limpar</button>
+            </div>      
+        </form>
+    </mat-card>
+</div>
