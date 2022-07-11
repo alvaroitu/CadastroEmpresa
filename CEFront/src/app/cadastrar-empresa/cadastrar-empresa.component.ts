@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CademService } from '../services/cadem.service';
 
@@ -25,12 +25,12 @@ export class CadastrarEmpresaComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      cnpj: [''],
-      razaoSocial: [''],
-      nomeFantasia: [''],
-      apelido: [''],
-      telefone: [''],
-      email: [''],
+      cnpj: ['', [Validators.required, Validators.pattern(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/)]],
+      razaoSocial: ['', Validators.required],
+      nomeFantasia: ['', Validators.required],
+      apelido: ['', Validators.required],
+      telefone: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       cnaeSecao: [''],
       cnaeClasse: ['']            
     });
@@ -43,19 +43,31 @@ export class CadastrarEmpresaComponent implements OnInit {
   ];
 
   cadastrar(): void{
-    console.log(this.formulario.value)
+    console.log(this.formulario)
 
-    this.service.create(this.formulario.value).subscribe((resposta) => {
-      // alert("adicionado com sucesso!");
-      this.router.navigate(['listarEmpresas'])
-    });
+    if(this.formulario.valid){
+      this.service.create(this.formulario.value).subscribe((resposta) => {
+        // alert("adicionado com sucesso!");
+        this.router.navigate(['listarEmpresas'])
+      });
+  
+      this.formulario.reset();
 
-    this.formulario.reset();
-
+    } else{
+      console.log("INVALIDO")
+    }
   }
 
   limparFormulario(): void{
     this.formulario.reset();
+  }
+
+  validaCampo(campo: string){
+    return this.formulario.get('campo')?.errors?.['required'] 
+  }
+
+  CnpjMask(): string{
+    return '00.000.000/0000-00'
   }
 
 }
