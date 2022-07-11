@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CademService } from '../services/cadem.service';
 
 interface Food {
   value: string;
@@ -18,7 +19,7 @@ export class CadastrarEmpresaComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    // private service: CademService,
+    private service: CademService,
     private router: Router,
   ) { }
 
@@ -31,10 +32,7 @@ export class CadastrarEmpresaComponent implements OnInit {
       telefone: [''],
       email: [''],
       cnaeSecao: [''],
-      cnaeClasse: [''],
-      // cnaeSecao: [''],
-      // cnaeSecao: [''],
-      // cnaeSecao: [''],      
+      cnaeClasse: ['']            
     });
   }
 
@@ -46,6 +44,18 @@ export class CadastrarEmpresaComponent implements OnInit {
 
   cadastrar(): void{
     console.log(this.formulario.value)
+
+    this.service.create(this.formulario.value).subscribe((resposta) => {
+      alert("adicionado com sucesso!");
+      this.router.navigate(['listarEmpresas'])
+    });
+
+    this.formulario.reset();
+
+  }
+
+  limparFormulario(): void{
+    this.formulario.reset();
   }
 
 }

@@ -1,6 +1,6 @@
 <div class="container">    
     <mat-card class="container_card">
-        <form class="container_card_form" [formGroup]="formulario" (ngSubmit)="cadastrar()">
+        <form class="container_card_form" [formGroup]="formulario">
             <div class="container_card_form_div">
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>CNPJ</mat-label>
@@ -48,27 +48,11 @@
                         {{food.viewValue}}
                     </mat-option>
                     </mat-select>
-                </mat-form-field>
-                <mat-form-field class="container_card_form_div_select" appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <mat-select>
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                    </mat-option>
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field class="container_card_form_div_select" appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <mat-select>
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                    </mat-option>
-                    </mat-select>
-                </mat-form-field>              
+                </mat-form-field>                          
             </div>
             <div class="container_card_form_div">
-                <button mat-raised-button class="container_card_form_div_button" color="primary">Enviar</button>
-                <button mat-raised-button class="container_card_form_div_button" color="warn">Limpar</button>
+                <button mat-raised-button class="container_card_form_div_button" color="primary" (click)="cadastrar()">Enviar</button>
+                <button mat-raised-button class="container_card_form_div_button" color="warn" (click)="limparFormulario()">Limpar</button>
             </div>      
         </form>
     </mat-card>
