@@ -21,7 +21,8 @@ public class Cadem implements Serializable {
 	private String apelido;
 	private String telefone;
 	private String email;
-	private String cnae;
+	private String cnaeSecao;
+	private String cnaeClasse;
 
 	public Cadem() {
 		super();
@@ -29,7 +30,7 @@ public class Cadem implements Serializable {
 	}
 	
 	public Cadem(Integer id, String cnpj, String razaoSocial, String nomeFantasia, String apelido, String telefone,
-			String email, String cnae) {
+			String email, String cnaeSecao, String cnaeClasse) {
 		super();
 		this.id = id;
 		this.cnpj = cnpj;
@@ -38,9 +39,10 @@ public class Cadem implements Serializable {
 		this.apelido = apelido;
 		this.telefone = telefone;
 		this.email = email;
-		this.cnae = cnae;
+		this.cnaeSecao = cnaeSecao;
+		this.cnaeClasse = cnaeClasse;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
@@ -95,14 +97,22 @@ public class Cadem implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}	
+
+	public String getCnaeSecao() {
+		return cnaeSecao;
 	}
 
-	public String getCnae() {
-		return cnae;
+	public void setCnaeSecao(String cnaeSecao) {
+		this.cnaeSecao = cnaeSecao;
 	}
 
-	public void setCnae(String cnae) {
-		this.cnae = cnae;
+	public String getCnaeClasse() {
+		return cnaeClasse;
+	}
+
+	public void setCnaeClasse(String cnaeClasse) {
+		this.cnaeClasse = cnaeClasse;
 	}
 
 	public static long getSerialversionuid() {

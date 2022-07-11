@@ -45,7 +45,8 @@ public class CademService {
 		newObj.setApelido(obj.getApelido());
 		newObj.setTelefone(obj.getTelefone());
 		newObj.setEmail(obj.getEmail());
-		newObj.setCnae(obj.getCnae());
+		newObj.setCnaeSecao(obj.getCnaeSecao());
+		newObj.setCnaeClasse(obj.getCnaeClasse());
 		return repository.save(newObj);
 
 	}
