@@ -1,41 +1,41 @@
 <div class="container">    
     <mat-card class="container_card">
-        <form class="container_card_form">
+        <form class="container_card_form" [formGroup]="formulario">
             <div class="container_card_form_div">
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>CNPJ</mat-label>
-                    <input matInput [(ngModel)]="cademId.cnpj" name="cademId.cnpj">
+                    <input matInput formControlName="cnpj" [(ngModel)]="cademId.cnpj" name="cademId.cnpj">
                 </mat-form-field>
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>Razão Social</mat-label>
-                    <input matInput [(ngModel)]="cademId.razaoSocial" name="cademId.razaoSocial">
+                    <input matInput formControlName="razaoSocial" [(ngModel)]="cademId.razaoSocial" name="cademId.razaoSocial">
                 </mat-form-field>
             </div>
             <div class="container_card_form_div">                
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>Nome Fantasia</mat-label>
-                    <input matInput [(ngModel)]="cademId.nomeFantasia" name="cademId.nomeFantasia">
+                    <input matInput formControlName="nomeFantasia" [(ngModel)]="cademId.nomeFantasia" name="cademId.nomeFantasia">
                 </mat-form-field>
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>Apelido</mat-label>
-                    <input matInput [(ngModel)]="cademId.apelido" name="cademId.apelido" #apelido maxlength="30">
+                    <input matInput formControlName="apelido" [(ngModel)]="cademId.apelido" name="cademId.apelido" #apelido maxlength="30">
                     <mat-hint>{{apelido.value.length}} / 30</mat-hint>
                 </mat-form-field>
             </div>
             <div class="container_card_form_div">                
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>Telefone</mat-label>
-                    <input matInput [(ngModel)]="cademId.telefone" name="cademId.telefone">
+                    <input matInput formControlName="telefone" [(ngModel)]="cademId.telefone" name="cademId.telefone">
                 </mat-form-field>
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>E-mail</mat-label>
-                    <input matInput [(ngModel)]="cademId.email" name="cademId.email">
+                    <input matInput formControlName="email" [(ngModel)]="cademId.email" name="cademId.email">
                 </mat-form-field>
             </div>
             <div class="container_card_form_div">
                 <mat-form-field class="container_card_form_div_select" appearance="fill">
                     <mat-label>Favorite food</mat-label>
-                    <mat-select [(ngModel)]="cademId.cnaeSecao" name="cademId.cnaeSecao">
+                    <mat-select formControlName="cnaeSecao" [(ngModel)]="cademId.cnaeSecao" name="cademId.cnaeSecao">
                     <mat-option *ngFor="let food of foods" [value]="food.value">
                         {{food.viewValue}}
                     </mat-option>
@@ -43,7 +43,7 @@
                 </mat-form-field>
                 <mat-form-field class="container_card_form_div_select" appearance="fill">
                     <mat-label>Favorite food</mat-label>
-                    <mat-select [(ngModel)]="cademId.cnaeClasse" name="cademId.cnaeClasse">
+                    <mat-select formControlName="cnaeClasse" [(ngModel)]="cademId.cnaeClasse" name="cademId.cnaeClasse">
                     <mat-option *ngFor="let food of foods" [value]="food.value">
                         {{food.viewValue}}
                     </mat-option>
