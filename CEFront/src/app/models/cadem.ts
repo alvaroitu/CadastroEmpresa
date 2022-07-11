@@ -6,6 +6,5 @@ export interface Cadem {
     apelido: string,
     telefone: string,
     email: string,
-    cnaeSecao: string,
-    cnaeClasse: string 
+    cnaeSecaoDescricao: string 
 }

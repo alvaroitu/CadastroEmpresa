@@ -17,8 +17,7 @@ export class DeletarEmpresaComponent implements OnInit {
     apelido: '',
     telefone: '',
     email: '',
-    cnaeSecao: '',
-    cnaeClasse: ''
+    cnaeSecaoDescricao: ''
   }
 
   constructor(

@@ -4,7 +4,7 @@
             <div class="container_card_form_div">
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>CNPJ</mat-label>
-                    <input matInput formControlName="cnpj" placeholder="Ex. xx.xxx.xxx/xxxx-xx - somente numeros">
+                    <input matInput formControlName="cnpj" placeholder="Ex. XX.XXX.XXX/XXXX-XX">
                 </mat-form-field>
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>Razão Social</mat-label>
@@ -25,7 +25,7 @@
             <div class="container_card_form_div">                
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>Telefone</mat-label>
-                    <input matInput formControlName="telefone" placeholder="Ex. ddd + numero">
+                    <input matInput formControlName="telefone" placeholder="Ex. (XX) 9XXXX-XXXX">
                 </mat-form-field>
                 <mat-form-field class="container_card_form_div_input" appearance="fill">
                     <mat-label>E-mail</mat-label>
@@ -34,21 +34,13 @@
             </div>
             <div class="container_card_form_div">
                 <mat-form-field class="container_card_form_div_select" appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <mat-select formControlName="cnaeSecao">
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
+                    <mat-label>Seção do Cnae</mat-label>
+                    <mat-select formControlName="cnaeSecaoDescricao">
+                    <mat-option *ngFor="let secao of secaoIbge" [value]="secao[0]">
+                        {{secao[0]}}
                     </mat-option>
                     </mat-select>
-                </mat-form-field>
-                <mat-form-field class="container_card_form_div_select" appearance="fill">
-                    <mat-label>Favorite food</mat-label>
-                    <mat-select formControlName="cnaeClasse">
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                    </mat-option>
-                    </mat-select>
-                </mat-form-field>                          
+                </mat-form-field>                                         
             </div>
             <div class="container_card_form_div">
                 <button mat-raised-button class="container_card_form_div_button" color="primary" (click)="cadastrar()">Enviar</button>

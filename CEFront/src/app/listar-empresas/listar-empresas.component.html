@@ -32,14 +32,10 @@
         <ng-container matColumnDef="email">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </th>
           <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-        </ng-container>
-        <ng-container matColumnDef="cnaeSecao">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Seção do Cnae </th>
-          <td mat-cell *matCellDef="let row"> {{row.cnaeSecao}} </td>
-        </ng-container>
-        <ng-container matColumnDef="cnaeClasse">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Classe do Cnae </th>
-            <td mat-cell *matCellDef="let row"> {{row.cnaeClasse}} </td>
+        </ng-container>        
+        <ng-container matColumnDef="cnaeSecaoDescricao">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Descrição da Seção </th>
+            <td mat-cell *matCellDef="let row"> {{row.cnaeSecaoDescricao}} </td>
           </ng-container>
         <ng-container matColumnDef="acao">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>

@@ -3,11 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cadem } from '../models/cadem';
 import { CademService } from '../services/cadem.service';
-
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { CnaeService } from '../services/cnae.service';
 
 @Component({
   selector: 'app-editar-empresa',
@@ -17,6 +13,7 @@ interface Food {
 export class EditarEmpresaComponent implements OnInit {
 
   formulario!: FormGroup
+  secaoIbge: any[] = [];
 
   cademId: Cadem = {
     cnpj: '',
@@ -25,9 +22,7 @@ export class EditarEmpresaComponent implements OnInit {
     apelido: '',
     telefone: '',
     email: '',
-    cnaeSecao: '',
-    cnaeClasse: ''            
-
+    cnaeSecaoDescricao: ''
   }
   
 
@@ -35,7 +30,9 @@ export class EditarEmpresaComponent implements OnInit {
     private formBuilder: FormBuilder,
     private service: CademService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cnaeService: CnaeService
+
 
   ) { }
 
@@ -48,11 +45,12 @@ export class EditarEmpresaComponent implements OnInit {
       razaoSocial: ['', Validators.required],
       nomeFantasia: ['', Validators.required],
       apelido: ['', Validators.required],
-      telefone: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      cnaeSecao: [''],
-      cnaeClasse: ['']            
+      telefone: ['', [Validators.required, Validators.pattern(/^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/)]],
+      email: ['', [Validators.required, Validators.pattern(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/)]],      
+      cnaeSecaoDescricao: ['']      
     });
+
+    this.getSecaoFromIbge();
   }
 
   cancel(): void{
@@ -72,15 +70,19 @@ export class EditarEmpresaComponent implements OnInit {
         this.router.navigate(['listarEmpresas'])
       })
     } else{
-      console.log("INVALIDO")
+      console.log("formulario invalido")
     }
-
   }
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
-
+  getSecaoFromIbge(): void{
+    this.cnaeService.getSecao().subscribe(
+      (data: any) =>{
+        for (var item in data){
+          this.secaoIbge.push([data[item].descricao])
+        }        
+      },
+      err => console.error(err),
+      () => console.log('erro carregar secao')
+    )    
+  }
 }

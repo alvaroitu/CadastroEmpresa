@@ -10,7 +10,7 @@ import { CademService } from '../services/cadem.service';
 })
 export class ListarEmpresasComponent implements OnInit {
 
-  displayedColumns: any[] = ['id','cnpj','razaoSocial','nomeFantasia','apelido','telefone','email','cnaeSecao', 'cnaeClasse', 'acao'];
+  displayedColumns: any[] = ['id','cnpj','razaoSocial','nomeFantasia','apelido','telefone','email', 'cnaeSecaoDescricao', 'acao'];
   dataSource: MatTableDataSource<Cadem>;
 
   iceunsp: Cadem[] = [];
@@ -32,7 +32,7 @@ export class ListarEmpresasComponent implements OnInit {
 
   findAll(): void{
     this.service.findAll().subscribe((resposta) =>{
-      this.dataSource.data = resposta;      
+    this.dataSource.data = resposta;      
     })
   }
 

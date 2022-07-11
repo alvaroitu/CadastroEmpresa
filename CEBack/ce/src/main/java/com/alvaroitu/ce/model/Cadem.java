@@ -21,16 +21,17 @@ public class Cadem implements Serializable {
 	private String apelido;
 	private String telefone;
 	private String email;
-	private String cnaeSecao;
-	private String cnaeClasse;
+	private String cnaeSecaoDescricao;	
 
 	public Cadem() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+
 	public Cadem(Integer id, String cnpj, String razaoSocial, String nomeFantasia, String apelido, String telefone,
-			String email, String cnaeSecao, String cnaeClasse) {
+			String email, String cnaeSecaoDescricao) {
 		super();
 		this.id = id;
 		this.cnpj = cnpj;
@@ -39,9 +40,10 @@ public class Cadem implements Serializable {
 		this.apelido = apelido;
 		this.telefone = telefone;
 		this.email = email;
-		this.cnaeSecao = cnaeSecao;
-		this.cnaeClasse = cnaeClasse;
+		this.cnaeSecaoDescricao = cnaeSecaoDescricao;
 	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -99,21 +101,19 @@ public class Cadem implements Serializable {
 		this.email = email;
 	}	
 
-	public String getCnaeSecao() {
-		return cnaeSecao;
+	
+
+	public String getCnaeSecaoDescricao() {
+		return cnaeSecaoDescricao;
 	}
 
-	public void setCnaeSecao(String cnaeSecao) {
-		this.cnaeSecao = cnaeSecao;
+
+
+	public void setCnaeSecaoDescricao(String cnaeSecaoDescricao) {
+		this.cnaeSecaoDescricao = cnaeSecaoDescricao;
 	}
 
-	public String getCnaeClasse() {
-		return cnaeClasse;
-	}
 
-	public void setCnaeClasse(String cnaeClasse) {
-		this.cnaeClasse = cnaeClasse;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

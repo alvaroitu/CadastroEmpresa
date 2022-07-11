@@ -15,8 +15,8 @@ public class DBService {
 	private CademRepository cademRepository;
 
 	public void instanciaBandoDados() {
-		Cadem ce1 = new Cadem(null, "22333222", "aquila lá daquel jeito", "aquele bar", "barzinho", "222-222", "bar@gamal.com", "A","2.34");
-		Cadem ce2 = new Cadem(null, "55555555", "aquila lá daquel jeito", "aquele bar", "barzinho", "222-222", "bar@gamal.com", "A","2.34");
+		Cadem ce1 = new Cadem(null, "12.123.123/0001-12", "Aquilo lá daquele jeito", "Aquele bar", "Barzinho", "(11) 91234-1234", "bar@gamal.com", "Eventos");
+		Cadem ce2 = new Cadem(null, "12.123.123/1234-12", "Vamos nessa", "Sai da Frente que aí vem gente", "Comercio local", "(81) 91234-4321", "comercio@gamal.com", "Comercio");
 
 		cademRepository.saveAll(Arrays.asList(ce1, ce2));
 	}

@@ -8,6 +8,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 
+import { TextMaskModule } from 'angular2-text-mask';
+
+
 import { CadastrarEmpresaComponent } from './cadastrar-empresa.component';
 
 @NgModule({
@@ -22,7 +25,8 @@ import { CadastrarEmpresaComponent } from './cadastrar-empresa.component';
     MatInputModule,
     MatFormFieldModule, 
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    TextMaskModule
   ]
 })
 export class CadastrarEmpresaModule { }
