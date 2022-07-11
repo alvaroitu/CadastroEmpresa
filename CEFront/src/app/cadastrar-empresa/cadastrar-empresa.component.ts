@@ -46,7 +46,7 @@ export class CadastrarEmpresaComponent implements OnInit {
     console.log(this.formulario.value)
 
     this.service.create(this.formulario.value).subscribe((resposta) => {
-      alert("adicionado com sucesso!");
+      // alert("adicionado com sucesso!");
       this.router.navigate(['listarEmpresas'])
     });
 

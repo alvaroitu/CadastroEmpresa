@@ -1,10 +1,10 @@
 <mat-card class="container">
-    <p>tem certeza que deseja deletar a empresa?</p>
-    <p> Cnpj: {{cademId.cnpj}} </p>
-    <p> Razão Social: {{cademId.cnpj}} </p>
-    <p> Nome Fantasia: {{cademId.cnpj}} </p>
-    <div class="container_card_form_div">
-        <button mat-raised-button class="container_card_form_div_button" color="primary" (click)="delete()" >deletar</button>
-        <button mat-raised-button class="container_card_form_div_button" color="warn" (click)="cancel()">cancelar</button>
+    <h1>Tem certeza que deseja deletar a empresa?</h1>
+    <h2> Cnpj: {{cademId.cnpj}} </h2>
+    <h2> Razão Social: {{cademId.razaoSocial}} </h2>
+    <h2> Nome Fantasia: {{cademId.nomeFantasia}} </h2>
+    <div class="container_div">
+        <button mat-raised-button class="container_card_form_div_button" color="warn" (click)="delete()" >Deletar</button>
+        <button mat-raised-button class="container_card_form_div_button" color="accent" (click)="cancel()">Cancelar</button>
     </div> 
 </mat-card>

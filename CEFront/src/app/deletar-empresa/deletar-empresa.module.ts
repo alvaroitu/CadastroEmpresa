@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { DeletarEmpresaComponent } from './deletar-empresa.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MatCardModule } from '@angular/material/card';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class DeletarEmpresaModule { }

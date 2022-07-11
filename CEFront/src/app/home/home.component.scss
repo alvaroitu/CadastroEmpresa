@@ -1,4 +1,40 @@
-div{
-    text-align: center;
-    line-height: 800px;   
+.matcard{
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+
+    &_divE{
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+
+        &_img{
+            text-align: center;
+
+            &_chapeu{
+                height: 300px;
+            }
+        }
+
+        &_text{
+            text-align: center;
+
+            &_nome{
+                height: 300px;
+            }
+        }
+    }
+
+    &_divD{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 45%;
+        
+    }
+
+    
 }

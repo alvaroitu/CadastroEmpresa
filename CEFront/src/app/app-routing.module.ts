@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ListarEmpresasComponent } from './listar-empresas/listar-empresas.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'cadastrarEmpresa', component: CadastrarEmpresaComponent},
   { path: 'listarEmpresas', component: ListarEmpresasComponent },
   { path: 'editarEmpresa/:id', component: EditarEmpresaComponent },
