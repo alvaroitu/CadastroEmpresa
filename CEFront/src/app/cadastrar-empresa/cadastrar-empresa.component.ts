@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CademService } from '../services/cadem.service';
 import * as $ from 'jquery';
@@ -12,11 +12,11 @@ import { CnaeService } from '../services/cnae.service';
 })
 export class CadastrarEmpresaComponent implements OnInit {
 
-  formulario!: FormGroup;
+  formulario!: UntypedFormGroup;
   secaoIbge: any[] = [];
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private service: CademService,
     private router: Router,
     private cnaeService: CnaeService

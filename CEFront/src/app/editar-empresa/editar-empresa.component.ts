@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cadem } from '../models/cadem';
 import { CademService } from '../services/cadem.service';
@@ -12,7 +12,7 @@ import { CnaeService } from '../services/cnae.service';
 })
 export class EditarEmpresaComponent implements OnInit {
 
-  formulario!: FormGroup
+  formulario!: UntypedFormGroup
   secaoIbge: any[] = [];
 
   cademId: Cadem = {
@@ -27,7 +27,7 @@ export class EditarEmpresaComponent implements OnInit {
   
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private service: CademService,
     private router: Router,
     private route: ActivatedRoute,
