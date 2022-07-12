@@ -15,6 +15,9 @@ export class EditarEmpresaComponent implements OnInit {
   formulario!: UntypedFormGroup
   secaoIbge: any[] = [];
 
+  cnpjMask = '00.000.000/0000-00';
+  telefoneMask = '(00) 0 0000-0000';
+
   cademId: Cadem = {
     cnpj: '',
     razaoSocial: '',
@@ -41,11 +44,11 @@ export class EditarEmpresaComponent implements OnInit {
     this.findById();
 
     this.formulario = this.formBuilder.group({
-      cnpj: ['', [Validators.required, Validators.pattern(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/)]],
+      cnpj: ['', Validators.required],
       razaoSocial: ['', Validators.required],
       nomeFantasia: ['', Validators.required],
       apelido: ['', Validators.required],
-      telefone: ['', [Validators.required, Validators.pattern(/^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/)]],
+      telefone: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/)]],      
       cnaeSecaoDescricao: ['']      
     });

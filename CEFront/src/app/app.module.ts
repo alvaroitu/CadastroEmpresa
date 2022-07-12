@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,6 +22,7 @@ import { DeletarEmpresaModule } from './deletar-empresa/deletar-empresa.module';
 // import { EditarEmpresaComponent } from './editar-empresa/editar-empresa.component';
 // import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,    
@@ -36,7 +38,10 @@ import { DeletarEmpresaModule } from './deletar-empresa/deletar-empresa.module';
     ListarEmpresasModule,
     EditarEmpresaModule,
     DeletarEmpresaModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    })    
   ],
   providers: [],
   bootstrap: [AppComponent]

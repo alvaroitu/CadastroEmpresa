@@ -1,3 +1,4 @@
+import { NgxMaskModule } from 'ngx-mask';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -23,7 +24,8 @@ import { EditarEmpresaComponent } from './editar-empresa.component';
     MatInputModule,
     MatFormFieldModule, 
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxMaskModule.forChild()
   ]
 })
 export class EditarEmpresaModule { }

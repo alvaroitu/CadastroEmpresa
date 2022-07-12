@@ -12,6 +12,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 
 
 import { CadastrarEmpresaComponent } from './cadastrar-empresa.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CadastrarEmpresaComponent } from './cadastrar-empresa.component';
     MatFormFieldModule, 
     MatSelectModule,
     MatButtonModule,
-    TextMaskModule
+    TextMaskModule,
+    NgxMaskModule.forChild()
   ]
 })
 export class CadastrarEmpresaModule { }

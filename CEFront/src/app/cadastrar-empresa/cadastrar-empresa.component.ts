@@ -1,9 +1,10 @@
+import { compileInjectable } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CademService } from '../services/cadem.service';
-import * as $ from 'jquery';
 import { CnaeService } from '../services/cnae.service';
+
 
 @Component({
   selector: 'app-cadastrar-empresa',
@@ -15,6 +16,9 @@ export class CadastrarEmpresaComponent implements OnInit {
   formulario!: UntypedFormGroup;
   secaoIbge: any[] = [];
 
+  cnpjMask = '00.000.000/0000-00';
+  telefoneMask = '(00) 0 0000-0000';
+
   constructor(
     private formBuilder: UntypedFormBuilder,
     private service: CademService,
@@ -24,11 +28,11 @@ export class CadastrarEmpresaComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      cnpj: ['', [Validators.required, Validators.pattern(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/)]],
+      cnpj: ['', Validators.required],
       razaoSocial: ['', Validators.required],
       nomeFantasia: ['', Validators.required],
       apelido: ['', Validators.required],
-      telefone: ['', [Validators.required, Validators.pattern(/^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/)]],
+      telefone: ['', Validators.required],
       email: ['', [Validators.required, Validators.pattern(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/)]],      
       cnaeSecaoDescricao: ['']      
     });
