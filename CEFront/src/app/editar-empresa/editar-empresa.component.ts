@@ -44,11 +44,11 @@ export class EditarEmpresaComponent implements OnInit {
     this.findById();
 
     this.formulario = this.formBuilder.group({
-      cnpj: ['', Validators.required],
+      cnpj: ['', [Validators.required, Validators.pattern(/[0-9]{2}\.[0-9]{3}\.[0-9]{3}\/[0-9]{4}\-[0-9]{2}$/)]],
       razaoSocial: ['', Validators.required],
       nomeFantasia: ['', Validators.required],
       apelido: ['', Validators.required],
-      telefone: ['', Validators.required],
+      telefone: ['', [Validators.required, Validators.pattern(/\([1-9]{2}\) [1-9]{1} [0-9]{4}\-[0-9]{4}$/)]],
       email: ['', [Validators.required, Validators.pattern(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/)]],      
       cnaeSecaoDescricao: ['']      
     });

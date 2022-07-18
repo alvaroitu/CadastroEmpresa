@@ -1,4 +1,5 @@
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+//org.eclipse.ui.commands/state/org.eclipse.wst.xml.views.XPathView.processor.xpathprocessor/org.eclipse.ui.commands.radioState=xpath10
 ACTIVE_HYPERLINK_COLOR=255,200,0
 ATMARK_RULE=89,179,179
 ATTRIBUTE_DELIM=89,179,179
@@ -79,6 +80,7 @@ org.eclipse.emf.codegen.ui.jet.expressionForeground=152,152,255
 org.eclipse.emf.codegen.ui.jet.scriptletBackground=2,3,3
 org.eclipse.emf.codegen.ui.jet.scriptletForeground=235,237,239
 org.eclipse.jdt.ui.ColoredLabels.inherited=143,143,191
+org.eclipse.jdt.ui.ColoredLabels.match_highlight=73,83,90
 org.eclipse.jdt.ui.ColoredLabels.writeaccess_highlight=255,128,128
 org.eclipse.jdt.ui.Javadoc.backgroundColor=48,54,59
 org.eclipse.jdt.ui.Javadoc.foregroundColor=235,237,239
