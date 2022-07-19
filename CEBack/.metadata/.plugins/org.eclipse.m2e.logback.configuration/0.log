@@ -461,3 +461,6 @@
 2022-07-18 06:02:35,514 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\alvar\Documents\Projetos\CadastroEmpresa\CEBack\ce\src\test\resources
 2022-07-18 06:02:47,543 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-07-18 06:02:47,544 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2022-07-18 06:02:47,547 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-07-18 06:02:47,550 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-07-18 06:02:47,550 [Worker-25: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\alvar\Documents\Projetos\CadastroEmpresa\CEBack\ce\src\test\resources

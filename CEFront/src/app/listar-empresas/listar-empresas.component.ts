@@ -13,8 +13,6 @@ export class ListarEmpresasComponent implements OnInit {
   displayedColumns: any[] = ['id','cnpj','razaoSocial','nomeFantasia','apelido','telefone','email', 'cnaeSecaoDescricao', 'acao'];
   dataSource: MatTableDataSource<Cadem>;
 
-  iceunsp: Cadem[] = [];
-
   constructor(
     private service: CademService
     ) {
